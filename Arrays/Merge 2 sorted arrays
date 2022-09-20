@@ -1,0 +1,31 @@
+NAIVE SOLUTION
+
+int arr[]={1,3,5,7,9};
+        int arr1[]={2,4,6,8};
+        int m=arr.length;
+        int n=arr1.length;
+        int arr2[]=new int[m+n];
+        int i=0;
+        int j=0;
+        int k=0;
+        while(i<m && j<n){
+            if(arr[i]<arr1[j]){
+                arr2[k]=arr[i];
+                k++;
+                i++;
+            }
+            else {
+                arr2[k]=arr1[j];
+                k++;
+                j++;
+            }
+        }
+        while(i<m){                                 //AGAR J APNE LIMIT TAK POHCH GYA HO BUT I WALE ELEMENT BACHA HO
+            arr2[k++]=arr[i++];
+        }
+        while(j<n){                                 //AGAR I APNE LIMIT TAK POHCH GYA HO BUT J WALE ELEMENT BACHA HO
+            arr2[k++]=arr1[j];
+        }
+        for(i=0;i<m+n;i++){
+            System.out.print(arr2[i]+" ");
+        }
