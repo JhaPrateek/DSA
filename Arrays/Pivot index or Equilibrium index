@@ -1,0 +1,52 @@
+The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+
+NAIVE SOLUTION
+
+//isme hmlog  index ko pivot(i) bana ke i+1 se leke n tak ans i-1 se leke 0 tak sum krke check kar rae h,, ki dono side ka sum equal hae ya nai
+public static int arrayEquilibriumIndex(int[] arr){  
+		//Your code goes here
+        int i=1;
+        int j=0;
+        int n=arr.length;
+        while(i<n-1){
+             int suml=0;
+             int sumr=0;
+            for(int k=i-1;k>=0;k--){
+                suml=suml+arr[k];
+            }
+            for(int k=i+1;k<n;k++){
+                sumr=sumr+arr[k];
+            }
+            if(sumr==suml){
+                return i;
+            }
+            i++;
+        }
+        return -1;
+	}
+  
+  
+  
+  OPTIMISED SOLUTION
+  
+  // isme hmlog sliding window use kar rae h. index ko update krne k time leftsum mae current array element add kar rae h aur rightsum mae current array element minus kar rae h. 
+  
+   public int pivotIndex(int[] nums) {
+        int n=nums.length;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum=sum+nums[i];
+        }
+        int ls=0;      //ls=leftsum
+        int i=0;
+        int rs=sum;    //rs=rightsum
+        while(i<n){
+        rs=rs-nums[i];
+            if(ls==rs){
+                return i;
+            }
+            ls=ls+nums[i];
+            i++;
+        }
+        return -1;
+    }
