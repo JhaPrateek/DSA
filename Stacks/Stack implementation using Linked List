@@ -1,0 +1,86 @@
+  class Node {                           //creating node class
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+
+    }
+
+
+
+public class Stack {
+
+   private Node head;
+    private int size;
+
+
+    public Stack() {
+         head=null;
+        size=0;
+    }
+
+
+
+   
+
+
+    public int getSize() { 
+      
+        return size;
+    }
+
+    public boolean isEmpty() {
+       
+        return size==0;
+    }
+
+    public void push(int element) {
+     
+        Node newNode=new Node(element);
+        if (head==null)
+        {
+            head=newNode;
+        }
+        else
+        {
+           newNode.next=head;
+            head=newNode;
+        }
+        size=size+1;
+    }
+
+    public int pop() {
+       
+        
+        if (head==null)
+        {
+            size=0;
+            return -1;
+        }
+        else
+        {
+            size=size-1;
+            int topEle=head.data;
+            head=head.next;
+            return topEle;
+        }
+        
+        
+    }
+
+    public int top() {
+        
+        if (head==null)
+        {
+            return -1;
+        }
+        else
+        {
+            return head.data;
+        }
+        
+    }
+}
