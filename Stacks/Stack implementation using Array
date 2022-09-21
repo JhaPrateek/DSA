@@ -1,0 +1,73 @@
+class Stack{
+	int a[];
+	int ti;                           //ti=top index
+	int capacity;
+	Stack(int capacity){
+		this.capacity=capacity;          // size of the array
+		ti=-1;                           //initially stack is empty, so index in -1.
+		a=new int[capacity];
+	}
+	//O(1)
+	void push(int data) {
+		if(ti==capacity-1) {            // if the stack is full, still if we  add element thann it will throw Stack overflow  exception
+			//throw exception
+		}
+		a[++ti]=data;	                 //initially the index is -1,the index will get incremented and will store the element
+	}
+	//O(1)
+	int pop() {
+		if(ti==-1) {
+			//throw exception             // checking stack underflow excetion
+		}
+		int res=a[ti];
+		ti--;
+		return res;
+	}
+	//O(1)
+	int top() {
+		if(ti==-1) {
+			//throw exception
+		}
+		return a[ti];
+	}
+	//O(1)
+	int size() {
+		return ti+1;        //qki agr index 0 hae matlab 1 element h,agar index 2 hae matlab 2 element h aur agar ti -1 hae matlab stack empty h
+	}
+	//O(1)
+	boolean isEmpty() {
+		return (ti==-1);
+	}
+}
+public class Project {
+
+	public static void main(String[] args) 
+    {
+		Stack a=new Stack(10);
+		a.push(10);
+		a.push(20);
+		a.push(30);
+		a.push(40);
+		while(!a.isEmpty()) {                           // printing the elements of stack
+			System.out.println(a.pop());
+		}
+    }
+	}
+  
+  NOTE----
+  if we want to remove the stack oerflow exception then we have to create a new array of double the size of previous array and then store the elemnets of previous
+  array into new array and then use the remaining space of array to push new elements into the stack;
+  
+  void push(int data) {
+		if(ti==capacity-1) {
+			doubllecapacity();
+		}
+		a[++ti]=data;	
+	}
+    public doubleCapacity(){
+    int temp[]=a
+    a=new int[2*temp.length];
+    for(inti=0;i<a.temp.length;i++){
+    a[i]=temp[i];                       // copying the elements of previous array into new array
+    }
+    }
