@@ -1,0 +1,22 @@
+import java.util.*;                        //contains stack class
+public class Project {
+
+	public static void main(String[] args) 
+    {
+	Stack<Integer> a=new Stack<>();
+	a.push(10);
+	a.push(20);
+	System.out.println(a.size());        //returns size
+	System.out.println(a.peek());        //returns top element
+	System.out.println(a.pop());
+	System.out.println(a.isEmpty());
+    int arr[]= {2,4,5,3};
+    for(int x:arr) {                  //pushing array elements into the stack
+    	a.push(x);
+    }
+    while(a.isEmpty()) {
+    	System.out.println(a.pop());
+    }
+    }
+	}
+    
