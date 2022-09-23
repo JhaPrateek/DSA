@@ -1,0 +1,20 @@
+//Stack immplement karne k lie hmlog 2 queue use kar rae h.pehla push hmlog s1 m kar rae hae uar agar uske bbad push aa rha hae to pehle sara q1 element q2 m dalenge 
+fir jo element ko push krna tha usko q m daal denge and fir ssare element ko q2 se pp karke q1 m daal denge. iss trh se agar pop krenge to queue stack k trh kaam krega.
+
+class MyStack{
+    Queue q1;
+    Queue q2;
+    
+    void push(int data){
+    while(!q1.isEmpty()){      -->O(n)
+       q2.push(q1.pop());
+    }
+    q1.push(data);
+    while(!q2.isEmpty()){
+     q1.push(q2.pop());
+    }
+    }
+    int pop(){
+    return q1.pop();        -->O(1)
+    } 
+}
