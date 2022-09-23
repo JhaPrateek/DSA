@@ -1,23 +1,33 @@
+--OPTIMISED solution(Recursive)
+static void reverse(Stack<Integer> a) {
+		if(a.isEmpty()) {
+			return;
+		}
+		int temp=a.pop();
+		reverse(a);
+		System.out.println(temp);
+	}
+	public static void main(String[] args) {
+		Stack<Integer> a=new Stack<>();
+		a.push(10);
+		a.push(20);
+		a.push(30);
+		a.push(40);
+		a.add(50);
+		reverse(a);
+	}
+       
+       
+
+--NAIVE SOLUTION
+
 Input:
 St = {3,2,1,7,6}
 Output:
 {6,7,1,2,3}
 
 
-NAIVE SOLUTION
-In this solution we are using extra space(creating 2 stack)
-
---To reverse a stack we need 2 more stack.
-let say s= a->b->c->d->e
---in first while loop we are oping top element and storing it in a
-       a= e->d->c->b->a
-   now stack s is empty
---now we pop the element of a and store it in b
-       b= a->b->c->d->e
---now we pop the stack b and we got the desired output
-       s= e->d->c->b->a
-
- static void reverse(Stack<Integer> s)
+static void reverse(Stack<Integer> s)
     {
         Stack<Integer> a=new Stack<>();
         Stack<Integer> b=new Stack<>();
@@ -31,3 +41,18 @@ let say s= a->b->c->d->e
             s.push(b.pop());
         }
     }
+
+
+In this solution we are using extra space(creating 2 stack)
+
+--To reverse a stack we need 2 more stack.
+let say s= a->b->c->d->e
+--in first while loop we are oping top element and storing it in a
+       a= e->d->c->b->a
+   now stack s is empty
+--now we pop the element of a and store it in b
+       b= a->b->c->d->e
+--now we pop the stack b and we got the desired output
+       s= e->d->c->b->a
+
+ 
