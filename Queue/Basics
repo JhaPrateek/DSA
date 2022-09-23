@@ -2,6 +2,7 @@
 --It is also an abstract data type.
 --As the name suggests, in queue elements are inserted at one end(back) while deletion takes place at the other end(front).
 --Queues are open at both ends, unlike stacks that are open at only one end(the top)
+--Being an interface the queue needs a concrete class for the declaration and the most common classes are the PriorityQueue and LinkedList in Java.
 
 OPERATIONS
 ● enqueue(): Insertion of element
