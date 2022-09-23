@@ -1,0 +1,11 @@
+Queue<Integer> a=new LinkedList<>();
+		a.add(10);                                         //adds elemetn to the queue
+ 		a.add(20);
+		a.add(30);
+		a.add(40);
+		System.out.println(a.size());                      //returns the size of queue
+		System.out.println(a.peek());                      //returns the front element of queue
+		System.out.println(a.poll());                      //retuens the element removed ffrom the queue
+		while(!a.isEmpty()) {                              //prints all the element of th queue
+			System.out.println(a.poll());
+		}
