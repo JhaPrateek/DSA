@@ -1,0 +1,34 @@
+//Hmlog queue ko implement krne k lie 2 stack ka use kar rae h(s1 and s2), jb v push krna ho to bas s1 mae push krte jaa rae h lekin jab pop krna hae to hmlog ko s2 ko
+use krna hoga qki pop hmesa queue ka 1st element ko pop krta hae lekin wo element stack m sbse niche hota h. hmlog sara element ko pop krke s2 m daal denge, to jo s1
+m last m tha wo ab s2 m upar aa  jayega,usko pop krke return krenge and baaki sare element ko wapas s1 m daal denge.  
+
+class MyQueue{
+Stack s1;
+Stacks2;
+
+    void push(int data){
+       s1.push(data);                  -->O(1)
+    }
+
+    int pop(){
+    while(!s1.isEmpty()){
+      s2.push(s1.pop());               -->O(n)
+       }
+     int ans=s2.pop();
+      while(!s2.isEmpty()){
+      s1.psuh(s2.pop());
+      }
+      return ans;
+    }
+    
+    int peek(){
+     while(!s1.isEmpty()){
+      s2.push(s1.pop());
+       }
+     int ans=s2.peek();
+      while(!s2.isEmpty()){
+      s1.psuh(s2.pop());
+      }
+      return ans;
+    }
+}
