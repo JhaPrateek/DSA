@@ -1,0 +1,41 @@
+---Naive solution
+
+TC- O(n)
+SC- O(n)
+
+Queue<Integer> a=new LinkedList<>();
+		Stack<Integer> b=new Stack<>();
+		a.add(10);
+		a.add(20);
+		a.add(30);
+		a.add(40);
+		while(!a.isEmpty()) {
+			b.push(a.poll());
+		}
+		while(!b.isEmpty()) {
+			a.add(b.pop());
+		}
+		while(!a.isEmpty()) {
+			System.out.println(a.poll());
+		}
+
+
+---Optimised solution(RECURSIVE)
+
+static void reverse(Queue<Integer> a) {
+		if(a.isEmpty()) {
+			return;
+		}
+		int temp=a.poll();
+		reverse(a);
+		System.out.println(temp);
+	}
+	public static void main(String[] args) {
+		Queue<Integer> a=new LinkedList<>();
+		a.add(10);
+		a.add(20);
+		a.add(30);
+		a.add(40);
+		a.add(50);
+		reverse(a);
+	}
