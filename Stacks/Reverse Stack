@@ -5,7 +5,7 @@ static void reverse(Stack<Integer> a) {
 		}
 		int temp=a.pop();
 		reverse(a);
-		System.out.println(temp);
+		a.push(temp);
 	}
 	public static void main(String[] args) {
 		Stack<Integer> a=new Stack<>();
@@ -15,7 +15,9 @@ static void reverse(Stack<Integer> a) {
 		a.push(40);
 		a.add(50);
 		reverse(a);
-	}
+		while(!a.isEmpty()) {
+			System.out.println(a.pop());
+		}
        
        
 
