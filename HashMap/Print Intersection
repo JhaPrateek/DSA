@@ -1,0 +1,31 @@
+You have been given two integer arrays/lists (ARR1 and ARR2) of size N and M, respectively. You need to print their intersection; An intersection for this problem 
+can be defined when both the arrays/lists contain a particular value or to put it in other words, when there is a common value that exists in both the arrays/lists.
+// agar arr1 mae do(2) baar 3 present hae but arr2 mae ek hi baar 3 present hae to 3 ek hi baar print  hoga(mtlb intersection ek hi baar hga 3 ka.
+//wahi agar dono array mae do do baar 3 present hae to intersection 2 baar hoga.(mtlb 2 baar 3 print hoga).
+
+
+
+public static void printIntersection(int[] arr1,int[] arr2){
+	    int m=arr1.length;
+		int n=arr2.length;
+	    HashMap<Integer,Integer> a=new HashMap<>();
+		for(int i=0;i<m;i++) {
+			if(a.containsKey(arr1[i])) {
+        int value=a.get(arr1[i]);
+				a.put(arr1[i],value+1);
+			}
+			else {
+			       a.put(arr1[i],1);
+		}
+		}
+		for(int i=0;i<n;i++) {
+			if(a.containsKey(arr2[i])) {
+          int freq=a.get(arr2[i]);
+         if(freq>0){                                     //hmlog yaha frequency check kar rae h matlab agr frequency 0 se bara h mtlb intersect hoga 
+				System.out.println(arr2[i]);                       and uske baad freq ko udate krte rehna hae
+				a.put(arr2[i],freq-1);
+			}
+            }
+            else continue;
+		}
+	}
