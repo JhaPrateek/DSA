@@ -1,0 +1,22 @@
+//agr element map m already present hae to  to bas count ko brha denge.
+
+ public static int maxFrequencyNumber(int[] arr){ 
+		HashMap<Integer,Integer> a=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            if(a.containsKey(arr[i])){
+                a.put(arr[i],a.get(arr[i])+1);
+            }
+            else{
+                a.put(arr[i],1);
+            }
+        }
+        int max=0;
+        int ans=Integer.MIN_VALUE;
+        for(int i:arr){
+            if(a.get(i)>max){
+                max=a.get(i);
+                ans=i;
+            }
+        }
+        return ans;
+    }
