@@ -1,0 +1,39 @@
+● Treemap (uses BST implementation)
+● Hashmap (uses hash table implementation)
+
+Note: Both have similar functions and similar ways to use, differing only in the time complexities. The time complexity of each of the operations(insertion, deletion, 
+and searching) in the Treemap is O(logN), while in the case of Hashmap, they are O(1).
+
+--HashMap
+
+
+           HashMap<datatype_for_keys, datatype_for_values> name;         //In hashmap there in no limitation of datatype like array(index must be integer).
+
+
+           HashMap<String, Integer> ourmap = new HashMap<>();                // String- datatype of key , Integer- datatype of value
+           
+INSERTION          ourmap.put(“abc”, 1);                                     //Insertion in hashmap 
+                   ourmap.put(“def”, 3);
+                   
+                   
+                   System.out.println(map.size());           -->2            //prints the size of hashmap
+                   map.put("abc",4);
+                   System.out.println(map.size());           -->2            //still the size will be same bcz we are only updating the value of key 
+                   
+                   
+SEARCHING          int value = ourmap.get(“abc”);                            // If we try to access a key that is not present in the unordered_map, then we will get 
+                                                                                an error that we are trying to access the value that is not present in the map.
+                   int v1 = 0;
+                   if(ourmap.containsKey("abc1")) {                          //first we are checking if the map contains that key or not if it contains the we return                                                            
+                   v1 = map.get("abc1");                                        the value else it will return 0(to avoid null exception).
+                   }
+                   System.out.println(v1);                   -->0
+                   
+                   
+DELETION           ourmap.remove(“abc”);                                     //deletes the specified key from the hashmap
+
+
+                   Set<String> Keys = map.KeySet();                          //Used to create a set out of the key elements contained in the hash map.                                                           
+                   for(String s:Keys) {                                      
+                   System.out.println(s);                                    //It basically returns a set view of the keys.
+                   }
