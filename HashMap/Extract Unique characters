@@ -1,0 +1,18 @@
+//ekdm simple logic. agr map m wo character nai h to daal denge aur agar wo character hae to continue karenge.
+
+public static String uniqueChar(String str){
+		int n=str.length();
+		String c="";
+		HashMap<Character,Boolean> b=new HashMap<>();
+		for(int i=0;i<n;i++) {
+			char j=str.charAt(i);
+			if(b.containsKey(j)) {
+				continue;
+			}
+			else {
+				b.put(j,true);
+				c=c+j;
+			}
+		}
+        return c;
+	}
