@@ -1,0 +1,38 @@
+--Method-1
+ public static boolean check(long A[],long B[],int N)
+    {
+        Arrays.sort(A);
+        Arrays.sort(B);
+        for(int i=0;i<N;i++){
+            if(A[i]!=B[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+--Method-2
+//pehlr character ka count ka count brhaye fir 2nd time character ka count ghatye, agar value 0 ho gya matlab array equal h
+HashMap<Long,Integer> map = new HashMap();
+    for(int i =0;i<A.length;i++){
+  if(map.containsKey(A[i])){
+ map.put(A[i],map.get(A[i])+1);
+   }
+ if(!map.containsKey(A[i])){
+ map.put(A[i],1);
+ }
+  }
+  for(int i = 0;i<B.length;i++){
+   if(map.containsKey(B[i])){
+     map.put(B[i],map.get(B[i])-1);
+ }
+       else{
+     return false;
+     }
+   }
+    for(int x : map.values()){
+   if(x!=0){
+        return false;
+     }
+       }
+   return true;
