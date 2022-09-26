@@ -1,0 +1,57 @@
+Given two strings a and b consisting of lowercase characters. The task is to check whether two given strings are an anagram of each other or not. An anagram of a string
+is another string that contains the same characters, only the order of characters can be different. For example, act and tac are an anagram of each other.
+
+--METHOD-1
+// 2 hashmap bnae aur dono mae ek ek string ka character aur count daal die and last mae .equals() function ka use krke check kie ki dono hashmap equal hae ya nai 
+ public static boolean isAnagram(String a,String b)
+    {
+        
+    int m=a.length();
+        int n=b.length();
+        HashMap<Character,Integer> h=new HashMap<>();
+         HashMap<Character,Integer> h1=new HashMap<>();
+        for(int i=0;i<m;i++){
+            char j=a.charAt(i);
+            if(h.containsKey(j)){
+                h.put(j,h.get(j)+1);
+            }
+            else{
+                h.put(j,1);
+            }
+        }
+         for(int i=0;i<n;i++){
+            char j=b.charAt(i);
+            if(h1.containsKey(j)){
+                h1.put(j,h1.get(j)+1);
+            }
+            else{
+                h1.put(j,1);
+            }
+        }
+        return h.equals(h1);
+    }
+    
+--METHOD-2
+//String ke characters ko array m store karke sort kar die and fir dono array ko check kar lie 
+    public static boolean isAnagram(String a,String b)
+    {
+        
+        // Your code here
+        if(a.length()!=b.length())
+        {
+            return false;
+        }
+        char[] a1=a.toCharArray();
+        char[] b1=b.toCharArray();
+        
+        Arrays.sort(a1);
+        Arrays.sort(b1);
+        for(int i=0; i<a1.length; i++)
+        {
+            if(a1[i]!=b1[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
