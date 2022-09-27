@@ -1,0 +1,38 @@
+IDENTIFICATION--If sorted is mention in the question ,it means 99% we have to use binary search.
+--We can identify order(asc or desc) of array by comparing any 2 elements(lets say a[0]<a[1] means ascnedingily sorted else sorted in descending order 
+
+--Ascending sorted array
+int arr[]= {2,4,6,7,90};
+	int x= 7;                                  //we have to find the index of this element
+	int n=arr.length;
+	int s=0;                                   //starting index
+	int e=n-1;                                 //end index
+	while(s<=e) {
+		int mid=s+(e-s)/2;                       //we are using this instead of (s+e)/2 to avoid int overflow
+		if(arr[mid]==x) {
+			System.out.println(mid);
+			break;
+		}
+		else if(x<arr[mid]) {                   //if input element is smaller than mid element(means we have to check on the left side of mid)
+			e=mid-1;
+		}
+		else s=mid+1;                           //else element is on the right side
+	}
+  
+--Descending sorted array 
+int arr[]= {9,7,5,4,2,1};
+	int x= 2;          
+	int n=arr.length;
+	int s=0;
+	int e=n-1;
+	while(s<=e) {
+		int mid=s+(e-s)/2;
+		if(arr[mid]==x) {
+			System.out.println(mid);
+			break;
+		}
+		else if(x>arr[mid]) {
+			e=mid-1;
+		}
+		else s=mid+1;
+	}
