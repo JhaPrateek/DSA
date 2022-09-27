@@ -1,0 +1,49 @@
+--------------FIRST OCCURENNCE
+
+int arr[]= {2,4,10,10,10,18,20};      
+	int n=arr.length;
+	int x=10;                         //iska first occurence check krna hae array mae
+	int s=0;
+	int e=n-1;
+	int ans=-1;
+	while(s<=e) {
+		int mid=s+(e-s)/2;
+		if(arr[mid]==x) {
+			ans=mid;                      //jese hi wo element mila usko ans mae store kar lie.
+			e=mid-1;                      //e=mid-1 bcz 1st occurence k lie left side m check krna hota hae.
+		}
+		else if(x<arr[mid]) {           //baaki ye normal agr x chota hae mid se to  left side nai to right side check karenge
+			e=mid-1;
+		}
+		else s=mid+1;
+	}
+	System.out.println(ans);
+  
+  
+  ----------------LAST OCCURENCE
+  
+  int arr[]= {2,4,10,10,10,18,20};      
+	int n=arr.length;
+	int x=10;
+	int s=0;
+	int e=n-1;
+	int ans=-1;
+	while(s<=e) {
+		int mid=s+(e-s)/2;
+		if(arr[mid]==x) {
+			ans=mid;
+			s=mid+1;
+		}
+		else if(x<arr[mid]) {
+			e=mid-1;
+		}
+		else s=mid+1;
+	}
+	System.out.println(ans);
+  
+  
+  ------------COUNT OF ELEMENT IN SORTED ARRAY
+  
+  //bas last occurence and first occurence nikalna hae and uske baad unke difference mae 1 add kar dena hae 
+  
+  int ans= lastOccurence-firstOccurence+1;
