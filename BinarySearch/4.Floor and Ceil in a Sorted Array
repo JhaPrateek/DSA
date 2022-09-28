@@ -1,0 +1,59 @@
+-------------------------------
+arr[] ={1,2,8,10,11,12,19} , x=5
+
+If 5 is present in array , then 5 will only become floor nad ceil.If 5 is not present the maximum of the lower value before 5 will become floor and minimum of the larger
+value after 5 will be the ceil.
+-> Floor of 5-Greatest element smaller than 5
+-> Ceil of 5-Smallest element larger than 5
+-> For 7.8 , floor is 7 and ceil is 8.
+
+-------------------------------
+
+---Floor element
+
+static int findFloor(long arr[], int n, long x)
+    {
+        int s=0;
+        int e=n-1;
+        int ans=-1;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(arr[mid]==x){
+                return mid;
+            }
+            else if(arr[mid]<x){
+                ans=mid;                  //floor hmesa left side hoga, usko store kar lie and fir check kar rae h ki usse bara v koi floor elemrnt possible hae ya nai.
+                s=mid+1;
+            }
+            else e=mid-1;
+        }
+        return ans;
+    }
+    
+---Ceil element
+
+static int bs(int arr[],int n,int k) {
+		int s=0;
+		int e=n-1;
+		int ans=-1;
+		while(s<=e) {
+			int mid=s+(e-s)/2;
+			if(arr[mid]==k) {
+				return arr[mid];
+			}
+			else if(k<arr[mid]) {
+				ans=arr[mid];                     //ceil hmesa right side hoga, usko store kar lie and fir check kar rae h ki usse chota v koi ceil elemrnt possible hae ya nai.
+				e=mid-1;
+			}
+			else s=mid+1;
+		}
+		return ans;
+	}
+	public static void main(String[] args) {
+		int arr[]= {1, 2, 8, 10, 10, 12, 19};
+		int n=arr.length;
+		int k=5;
+		int ans=bs(arr,n,k);
+		System.out.println(ans);
+	}
+
