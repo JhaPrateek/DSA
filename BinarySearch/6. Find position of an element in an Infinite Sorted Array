@@ -1,0 +1,25 @@
+--As we dnt know the ending index in infinite array
+--What we will do here is that we will double the value of e(ending index) till the key becomes smaller than arr[e].
+--Initial value of e will be 1.
+
+
+
+static int IBS(int arr[], int x){
+  int s=0;                                   
+	int e=1;  
+  while(arr[e]<key){
+  s=e;
+  e=e*2;
+  }
+	while(s<=e) {
+		int mid=s+(e-s)/2;                       
+		if(arr[mid]==x) {
+			System.out.println(mid);
+			break;
+		}
+		else if(x<arr[mid]) {                  
+			e=mid-1;
+		}
+		else s=mid+1;                           
+	}
+}
