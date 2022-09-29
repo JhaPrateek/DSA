@@ -1,0 +1,42 @@
+----------------------------
+--Peak element=>elemnent ehich is greater than both of its neighbour
+--BS on works on one Unsorted array(Special case)
+--In peak element we have to divide the problem in two parts.
+  first we will check all the element of array exept the edges.
+  seecond we will compare the edge elements with its neighbour(this will generally only happen when there are only 2 elements in the array)
+----------------------------
+
+ public int findPeakElement(int[] nums) {
+        int s=0;
+        int e=nums.length-1;
+        while(s<=e){
+            if(s==e){                                                               // if only 1 element is present in the array,then return that element only
+                return s; 
+            }
+            int mid=s+(e-s)/2;
+            if(mid>0 && mid<e){                                                     //checking all the elements except edge elements
+                if(nums[mid]>nums[mid+1] && nums[mid]>nums[mid-1]){
+                    return mid;
+                }
+                else if(nums[mid]>nums[mid-1] && nums[mid]<nums[mid+1]){            //checking preference wheter we have to check in left side or right side
+                    s=mid+1;
+                }
+                else e=mid-1;
+            }
+            else{
+                if(mid==0){                                                         //checking edge case(if only 2 elements are present)
+                    if(nums[mid]>nums[mid+1]){
+                        return mid;
+                    }
+                    else return mid+1;
+                }
+                if(mid==e){                                                          //checking edge case(if only 2 elements are present)
+                    if(nums[mid]>nums[mid-1]){
+                        return mid;
+                    }
+                    else return mid-1;
+                }
+            }
+        }
+        return -1;
+    }
