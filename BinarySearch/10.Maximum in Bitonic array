@@ -1,0 +1,10 @@
+Bitonic array is like single mountain whwere there is only one peak point.
+---------------------
+--Only one peak element in Bitonic array.
+--Monotonically increasing and then Monotonically decreasing.
+--There should be no Duplicate elements in Bitonic array.
+--If more than 1 peakn element then it is not a bitonic array.
+--Maximum in {1,4,8,3,2}  ->  8
+---------------------
+
+Code->Peak element code
