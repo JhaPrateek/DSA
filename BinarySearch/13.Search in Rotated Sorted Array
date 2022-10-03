@@ -19,3 +19,8 @@
         }
         return -1;
     }
+
+------------------------
+Agar mid mae mil gya to thik hae nai to fir check kar rae hae ki agar element arr[s] se leke arr[mid] tak sorted hae and 
+target element isi range mae aa rha hae to e=mid-1 kar denge nai to s=mid+1
+Agar arr[mid] se leke arr[] tak sorted hae and isi range mae target element mil jaaye to s=mid+1 kar denge nai to e=mid-1. 
