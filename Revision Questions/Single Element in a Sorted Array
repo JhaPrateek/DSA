@@ -10,6 +10,10 @@
         return nums[left];
     }   
 
+
+Time: -  O(logN)
+space:-  O(1)
+
 ----------------------------------
 
 EXPLANATION:-
@@ -35,6 +39,3 @@ From these points, we can implement algorithm.
 	so, single number must be before mid.
 	so, update end to mid.
 3. At last return the nums[left]
-
-Time: -  O(logN)
-space:-  O(1)
